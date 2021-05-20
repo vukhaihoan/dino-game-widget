@@ -9,7 +9,7 @@ function submit() {
     const nc = Number(code);
     socket.emit("verify user", nc, (res) => {
         if (res) {
-            Cookies.set("user info", res, { sameSite: "None" });
+            Cookies.set("user info", res, { sameSite: "None", secure: true });
             window.location = "/";
         } else {
             document.getElementById("notify").innerHTML = `Can not find User , Please enter another code`;
