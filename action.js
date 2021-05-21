@@ -8,12 +8,12 @@ if (CookiesUD) {
     console.log(CookiesUD);
 }
 function onStart() {
-    socket.emit("onstart", CookiesUD, (res) => {});
+    socket.broadcast.emit("onstart", CookiesUD, (res) => {});
 }
 function onDie() {
-    socket.emit("ondie", CookiesUD, (res) => {});
+    socket.broadcast.emit("ondie", CookiesUD, (res) => {});
 }
 function onRestart() {
-    socket.emit("onrestart", CookiesUD, (res) => {});
+    socket.broadcast.emit("onrestart", CookiesUD, (res) => {});
 }
 export { onStart, onDie, onRestart };
